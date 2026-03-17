@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavari Polo</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 80px;
+    letter-spacing: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTION */
+.section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #aaa;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* SHOP */
+.product {
+    background: #111;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    color: #C6A15B;
+    margin: 10px 0;
+}
+
+/* EMAIL */
+input {
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 250px;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: gray;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <video autoplay muted loop>
+        <source src="https://cdn.coverr.co/videos/coverr-horse-running-1576/1080p.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>KAVARI POLO</h1>
+        <p>Style That Rides Beyond the Game</p>
+        <button class="btn">Explore</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section fade">
+    <h2>The Brand</h2>
+    <p>
+        Kavari Polo is a luxury equestrian lifestyle brand built on power,
+        elegance, and performance. Designed for riders, athletes, and those
+        who live beyond limits.
+    </p>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="section fade">
+    <h2>What We Offer</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Luxury Apparel</h3>
+            <p>Premium polo wear and lifestyle clothing.</p>
+        </div>
+
+        <div class="card">
+            <h3>Riding Gear</h3>
+            <p>High-performance equestrian equipment.</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom Horse Training</h3>
+            <p>Personalized horse training programs.</p>
+        </div>
+
+        <div class="card">
+            <h3>Player Training</h3>
+            <p>Elite polo coaching and development.</p>
+        </div>
+
+        <div class="card">
+            <h3>Horse Training</h3>
+            <p>Professionally trained polo horses.</p>
+        </div>
+
+        <div class="card">
+            <h3>Horses for Sale</h3>
+            <p>Premium trained horses for competition.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP -->
+<section class="section fade">
+    <h2>Shop Drops</h2>
+
+    <div class="grid">
+        <div class="product">
+            <img src="https://via.placeholder.com/300">
+            <h3>Kavari Polo Tee</h3>
+            <p class="price">₹4,999</p>
+            <button class="btn">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300">
+            <h3>Rider Jacket</h3>
+            <p class="price">₹9,999</p>
+            <button class="btn">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300">
+            <h3>Elite Cap</h3>
+            <p class="price">₹2,499</p>
+            <button class="btn">Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL -->
+<section class="section fade">
+    <h2>Exclusive Drops</h2>
+    <p>Be the first to access limited releases</p>
+    <br>
+    <input type="email" placeholder="Enter email">
+    <button class="btn">Join</button>
+</section>
+
+<footer>
+    © 2026 Kavari Polo. All rights reserved.
+</footer>
+
+<script>
+// SCROLL ANIMATION
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    fades.forEach(fade => {
+        const top = fade.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            fade.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
