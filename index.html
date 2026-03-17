@@ -1,130 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kavari Polo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavari Polo | The Inner Circle of Polo</title>
+  <meta name="description" content="Kavari Polo is an elite equestrian identity founded by polo player Kavin Gaur—private training, player development, and luxury apparel coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070707;
+      --surface: #111111;
+      --surface-soft: #1b1b1b;
+      --gold: #c8a56a;
+      --gold-soft: #ead4ae;
+      --text: #f4f0e8;
+      --muted: #b8ad9b;
+      --border: rgba(255, 255, 255, 0.12);
+      --max: 1180px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-:root{
- --bg:#0b0a09;
- --brown:#3b2a1f;
- --beige:#d6c3a3;
- --gold:#c6a15b;
- --soft:#a89a86;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:white;overflow-x:hidden;cursor:none}
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      align-items: center;
+      isolation: isolate;
+      padding: 2rem;
+    }
 
-/* CURSOR */
-.cursor{position:fixed;width:14px;height:14px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999}
-.cursor-follower{position:fixed;width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;opacity:.4}
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(7, 7, 7, 0.45), rgba(7, 7, 7, 0.9)),
+        url('https://images.unsplash.com/photo-1597258278495-a7d7b2f7f9ec?auto=format&fit=crop&w=1800&q=80') center / cover;
+      z-index: -2;
+      transform: scale(1.02);
+    }
 
-/* HERO */
-.hero{height:200vh;position:relative}
-.hero video{position:fixed;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(0.35) contrast(1.2)}
-.hero-overlay{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.hero h1{font-size:120px;font-family:'Playfair Display',serif;letter-spacing:10px;color:var(--beige);opacity:0;transform:translateY(100px);transition:1s}
-.hero p{margin-top:20px;font-size:20px;color:var(--soft);opacity:0;transition:1s}
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(200, 165, 106, 0.25), transparent 45%);
+      z-index: -1;
+    }
 
-/* SECTION */
-.section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 12%}
-.big{font-size:80px;font-family:'Playfair Display',serif;line-height:1.1;color:var(--beige);opacity:0;transform:translateY(80px);transition:1s}
-.small{max-width:750px;margin-top:20px;color:var(--soft);opacity:0;transform:translateY(50px);transition:1s}
+    .topbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 10vh;
+    }
 
-/* PARALLAX IMAGE */
-.parallax{height:90vh;background:url('https://images.unsplash.com/photo-1517849845537-4d257902454a') center/cover fixed;filter:brightness(0.4)}
+    .crest {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-soft);
+      font-size: 1.05rem;
+    }
 
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:60px;width:100%}
-.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);padding:30px;border-radius:20px;transition:.4s}
-.card:hover{transform:translateY(-15px) scale(1.05);border-color:var(--gold)}
+    .hero-inner {
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
 
-/* COMING */
-.coming{font-size:110px;font-family:'Playfair Display',serif;color:var(--gold);letter-spacing:6px;opacity:0;transition:1s}
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.72rem;
+      color: var(--gold-soft);
+    }
 
-footer{padding:40px;text-align:center;color:#666}
-</style>
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 6vw, 5.8rem);
+      max-width: 14ch;
+    }
+
+    .lead {
+      max-width: 60ch;
+      color: #ddd3c5;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      border: 1px solid var(--gold);
+      color: var(--gold-soft);
+      padding: 0.75rem 1.3rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      transition: 0.25s;
+    }
+
+    .btn:hover { background: rgba(200, 165, 106, 0.15); }
+
+    .btn.ghost { border-color: var(--border); color: var(--text); }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(4rem, 9vw, 7rem) 2rem;
+    }
+
+    .split {
+      display: grid;
+      gap: 2.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      align-items: start;
+    }
+
+    .statement {
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      color: var(--gold-soft);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      min-height: 180px;
+    }
+
+    .card h3 { color: var(--gold-soft); margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    .founder {
+      background: linear-gradient(125deg, #121212, #0d0d0d);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      color: #ded3c1;
+      font-style: italic;
+    }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .process li {
+      list-style: none;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      color: var(--muted);
+    }
+
+    .process li::before {
+      counter-increment: step;
+      content: '0' counter(step) ' · ';
+      color: var(--gold-soft);
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .coming {
+      text-align: center;
+      padding: 6rem 2rem 6.5rem;
+      background: radial-gradient(circle at center, rgba(200, 165, 106, 0.2), transparent 55%), #090909;
+      border-top: 1px solid var(--border);
+    }
+
+    .coming .title {
+      font-size: clamp(2rem, 6vw, 4.8rem);
+      color: var(--gold-soft);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.7rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #8f887c;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .topbar { margin-bottom: 4rem; }
+      .hero { padding: 1.4rem; }
+      .section { padding-inline: 1.2rem; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="hero">
+    <div class="topbar">
+      <p class="crest">Kavari Polo</p>
+      <p>By Invitation • Global</p>
+    </div>
 
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">An elite equestrian identity</p>
+      <h1>Not a store. A world built for riders.</h1>
+      <p class="lead">
+        Kavari Polo exists for those who understand discipline, precision, and presence. This is not conventional e-commerce—
+        it is an access point into a private ecosystem shaped on the polo field.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#ecosystem">Enter the ecosystem</a>
+        <a class="btn ghost" href="#coming-soon">Luxury label: Coming soon</a>
+      </div>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-horse-running-1576/1080p.mp4">
-</video>
-<div class="hero-overlay">
-<h1 id="heroTitle">KAVARI POLO</h1>
-<p id="heroSub">Not for everyone. Only for riders.</p>
-</div>
-</section>
+  <section class="section split">
+    <h2 class="statement">Kavari Polo is not built from trends. It is built from lived performance.</h2>
+    <p>
+      In polo, legitimacy is earned—not claimed. Every element of the brand reflects that truth: intensity in preparation,
+      control in execution, and composure under pressure. Visitors are not asked to buy quickly—they are invited to understand
+      the standard first.
+    </p>
+  </section>
 
-<!-- STORY -->
-<section class="section">
-<div class="big reveal">This is not clothing.</div>
-<div class="small reveal">It is identity. Built through discipline, power, and control.</div>
-</section>
+  <section class="section founder split" id="founder">
+    <div>
+      <p class="eyebrow">Founder credibility</p>
+      <h2>Built by Kavin Gaur</h2>
+      <p>
+        Kavari Polo is founded by a real polo player, not a distant marketer. The brand comes from training sessions,
+        tournament experience, horse management, and field-tested discipline.
+      </p>
+    </div>
+    <p class="quote">
+      “Kavari is an extension of how I ride and train—precise, intentional, and uncompromising.”
+    </p>
+  </section>
 
-<div class="parallax"></div>
+  <section class="section" id="ecosystem">
+    <p class="eyebrow">The ecosystem</p>
+    <h2>High-value services for serious riders</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Custom Horse Training</h3>
+        <p>Performance-focused conditioning tailored to the horse’s temperament, athletic capacity, and match role.</p>
+      </article>
+      <article class="card">
+        <h3>Player Development</h3>
+        <p>Structured progression for players committed to stronger game intelligence, technique, and consistency.</p>
+      </article>
+      <article class="card">
+        <h3>Private Coaching</h3>
+        <p>One-on-one instruction for riders who value precision over volume and measurable improvement over hype.</p>
+      </article>
+      <article class="card">
+        <h3>Trained Horses for Sale</h3>
+        <p>Access to carefully prepared polo horses selected for quality, readiness, and competitive potential.</p>
+      </article>
+    </div>
+  </section>
 
-<section class="section">
-<div class="big reveal">Built by Kavin Gaur</div>
-<div class="small reveal">A polo player. A rider. Real experience shaping every move.</div>
-</section>
+  <section class="section split">
+    <div>
+      <p class="eyebrow">Selective access</p>
+      <h2>A private-club approach, not open admission</h2>
+    </div>
+    <ol class="process">
+      <li>Submit your interest and riding goals.</li>
+      <li>Receive a tailored pathway for training, coaching, or horse placement.</li>
+      <li>Enter a high-performance environment with focused, elite support.</li>
+    </ol>
+  </section>
 
-<section class="section">
-<div class="big reveal">Train. Ride. Dominate.</div>
-<div class="grid">
-<div class="card">Horse Training</div>
-<div class="card">Player Development</div>
-<div class="card">Elite Coaching</div>
-<div class="card">Trained Horses</div>
-<div class="card">Exclusive Access</div>
-<div class="card">Private Sessions</div>
-</div>
-</section>
+  <section class="coming" id="coming-soon">
+    <p class="eyebrow">Future vision</p>
+    <h2 class="title">Luxury Equestrian Apparel — Coming Soon</h2>
+    <p class="lead" style="margin: 0 auto;">
+      The clothing label is being introduced with intention. It will arrive as an extension of the Kavari Polo lifestyle,
+      not as its foundation.
+    </p>
+  </section>
 
-<section class="section">
-<div class="big reveal">Clothing is coming.</div>
-<div class="small reveal">A luxury drop built for riders who understand presence.</div>
-</section>
-
-<section class="section">
-<div class="coming reveal">COMING SOON</div>
-</section>
-
-<footer>© 2026 Kavari Polo — Built Different</footer>
-
-<script>
-// CURSOR
-const c=document.querySelector('.cursor');
-const f=document.querySelector('.cursor-follower');
-let mx=0,my=0,fx=0,fy=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.transform=`translate(${mx}px,${my}px)`});
-function loop(){fx+=(mx-fx)*0.1;fy+=(my-fy)*0.1;f.style.transform=`translate(${fx}px,${fy}px)`;requestAnimationFrame(loop)}loop();
-
-// SCROLL
-const reveals=document.querySelectorAll('.reveal');
-window.addEventListener('scroll',()=>{
-let trigger=window.innerHeight*0.85;
-reveals.forEach(el=>{
-let top=el.getBoundingClientRect().top;
-if(top<trigger){el.style.opacity=1;el.style.transform='translateY(0)'}
-});
-
-// HERO
-let t=document.getElementById('heroTitle');
-let s=document.getElementById('heroSub');
-if(window.scrollY<100){t.style.opacity=1;t.style.transform='translateY(0)';s.style.opacity=1}
-});
-</script>
-
+  <footer>
+    © 2026 Kavari Polo · For those who belong to the sport.
+  </footer>
 </body>
 </html>
