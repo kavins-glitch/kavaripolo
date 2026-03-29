@@ -156,6 +156,46 @@
       display: inline-block;
     }
 
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .gallery-item span {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      font-size: 14px;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+/* hover effect */
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    }
+
   </style>
 </head>
 
@@ -265,32 +305,144 @@
 
   <!-- PHILOSOPHY -->
   <section class="fade">
-    <h2 class="section-title">Philosophy</h2>
-    <ul class="philosophy text">
-      <li>Discipline over hype</li>
-      <li>Performance meets elegance</li>
-      <li>Built for legacy, not trends</li>
+  <h2 class="section-title">Philosophy</h2>
+
+  <div class="text">
+
+    <p>
+      Kavari Polo is built on a mindset — one that values discipline, clarity, and quiet confidence over noise and excess.
+      It is not driven by trends, but by principles that remain constant regardless of time or environment.
+    </p>
+
+    <p style="margin-top: 20px;">
+      The world of polo demands precision, patience, and control. These same qualities define the foundation of the brand.
+      Every movement has intent. Every decision carries purpose. Nothing is accidental.
+    </p>
+
+    <p style="margin-top: 20px;">
+      At its core, Kavari Polo believes that true presence does not need to be loud. It is built through consistency,
+      restraint, and the ability to perform when it matters most. This belief shapes not only the aesthetic of the brand,
+      but the identity of those who connect with it.
+    </p>
+
+    <p style="margin-top: 20px;">
+      The philosophy is guided by three core principles:
+    </p>
+
+    <ul style="margin-top: 15px; line-height: 1.8;">
+      <li><strong>Discipline Over Hype</strong> — Lasting identity is built through repetition, not attention.</li>
+      <li><strong>Performance Meets Elegance</strong> — Strength and control must coexist with refinement.</li>
+      <li><strong>Legacy Over Moment</strong> — The focus is not on immediate success, but on building something that endures.</li>
     </ul>
-  </section>
+
+    <p style="margin-top: 25px;">
+      Kavari Polo is not simply worn — it is carried through mindset, behavior, and intent. It reflects a way of moving
+      through the world with purpose, control, and understated confidence.
+    </p>
+
+    <p style="margin-top: 25px; font-style: italic; color: #999;">
+      “True style is not seen first — it is felt.”
+    </p>
+
+  </div>
+</section>
 
   <!-- VISION -->
   <section id="vision" class="fade">
-    <h2 class="section-title">Future Vision</h2>
-    <p class="text">
-      Kavari Polo aims to expand into premium apparel, riding gear, and global collaborations.
-      The goal is to position itself as a luxury equestrian lifestyle brand representing modern polo culture worldwide.
+  <h2 class="section-title">Future Vision</h2>
+
+  <div class="text">
+
+    <p>
+      Kavari Polo is being built with a long-term perspective — not as a short-term brand, but as a name that will
+      stand the test of time. The vision extends beyond apparel, aiming to shape a complete equestrian lifestyle
+      rooted in authenticity, discipline, and modern identity.
     </p>
-  </section>
+
+    <p style="margin-top: 20px;">
+      The journey begins with establishing a strong foundation — creating a brand that resonates within the polo
+      and equestrian community. This involves building meaningful connections with riders, clubs, and individuals
+      who truly understand the culture.
+    </p>
+
+    <p style="margin-top: 20px;">
+      As the brand evolves, Kavari Polo will expand into premium product lines including performance-driven apparel,
+      riding gear, and carefully designed lifestyle pieces. Every product will reflect the same philosophy —
+      precision, elegance, and purpose.
+    </p>
+
+    <p style="margin-top: 20px;">
+      The long-term goal is global positioning. Kavari Polo aims to represent modern polo culture on an international
+      stage, collaborating with equestrian communities across countries and building a presence that extends far
+      beyond its origins.
+    </p>
+
+    <p style="margin-top: 20px;">
+      More than growth, the focus is on impact — shaping how polo is perceived by a new generation and bringing
+      a fresh, contemporary identity to a traditionally exclusive space.
+    </p>
+
+    <p style="margin-top: 20px;">
+      Every phase of this journey is intentional:
+    </p>
+
+    <ul style="margin-top: 15px; line-height: 1.8;">
+      <li><strong>Foundation</strong> — Build identity, presence, and credibility within the equestrian world.</li>
+      <li><strong>Expansion</strong> — Introduce apparel, riding gear, and lifestyle collections.</li>
+      <li><strong>Global Reach</strong> — Collaborate with international polo clubs and communities.</li>
+      <li><strong>Legacy</strong> — Establish Kavari Polo as a defining name in modern equestrian culture.</li>
+    </ul>
+
+    <p style="margin-top: 25px;">
+      Kavari Polo is not built to follow the industry — it is built to contribute to it, evolve it, and ultimately
+      redefine how it is experienced.
+    </p>
+
+    <p style="margin-top: 25px; font-style: italic; color: #999;">
+      “The goal is not visibility. The goal is significance.”
+    </p>
+
+  </div>
+</section>
 
   <!-- GALLERY -->
   <section id="gallery" class="fade">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery">
+  <h2 class="section-title">Gallery</h2>
+
+  <div class="text" style="margin-bottom: 30px;">
+    <p>
+      The world of Kavari Polo is defined by movement, discipline, and atmosphere. Every frame captures a moment —
+      not just of the sport, but of the lifestyle that surrounds it. From early mornings at the stables to the intensity
+      of the field, these visuals reflect the essence of equestrian life.
+    </p>
+
+    <p style="margin-top: 15px;">
+      This is where precision meets nature, where strength meets elegance, and where every detail carries intent.
+      Kavari Polo is not just seen — it is experienced.
+    </p>
+
+    <p style="margin-top: 15px; font-style: italic; color: #999;">
+      A glimpse into a world defined by control, rhythm, and quiet power.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">
       <img src="https://images.squarespace-cdn.com/content/v1/630641fc9bb5216417ef8f30/9f75964f-e58c-4071-8cd3-f075ee6de713/Nashville-Photographer-250615049368020002.jpg">
-      <img src="https://cdn.pixabay.com/photo/2020/11/05/20/16/horses-5716127_1280.jpg">
-      <img src="https://live.staticflickr.com/4837/46252735421_454b21452b_c.jpg">
+      <span>On Field Precision</span>
     </div>
-  </section>
+
+    <div class="gallery-item">
+      <img src="https://cdn.pixabay.com/photo/2020/11/05/20/16/horses-5716127_1280.jpg">
+      <span>Equestrian Lifestyle</span>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://live.staticflickr.com/4837/46252735421_454b21452b_c.jpg">
+      <span>Discipline & Control</span>
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact fade">
