@@ -149,6 +149,18 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
+    .founder-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .founder-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .image-frame {
       padding: 6px;
       border-radius: 14px;
@@ -247,6 +259,61 @@
 
     .contact-form button:hover {
       background: #e0c07a;
+    }
+
+    .footer {
+      background: #050505;
+      padding: 50px 20px 25px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 80px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      gap: 20px;
+    }
+
+    .footer-brand h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-brand p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 15px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .signature {
+      margin-top: 5px;
+      font-style: italic;
+      color: #999;
     }
 
   </style>
@@ -552,6 +619,31 @@
   </div>
 
 </section>
+
+  <footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h3>KAVARI POLO</h3>
+      <p>Style That Rides Beyond the Game.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#founder">Founder</a>
+      <a href="#vision">Vision</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Kavari Polo. All rights reserved.</p>
+    <p class="signature">Built with intent.</p>
+  </div>
+
+</footer>
 
   <!-- JS -->
   <script>
