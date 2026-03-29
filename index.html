@@ -130,6 +130,32 @@
       transform: translateY(0);
     }
 
+    .founder-image img {
+      width: 240px;              /* smaller size */
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+
+  /* luxury styling */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+      transition: all 0.4s ease;
+    }
+
+/* subtle premium hover effect */
+    .founder-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+
+    .image-frame {
+      padding: 6px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #C8A96A, transparent);
+      display: inline-block;
+    }
+
   </style>
 </head>
 
@@ -192,8 +218,10 @@
 
     <!-- IMAGE -->
     <div class="founder-image">
-      <img src="your-image.jpeg" alt="Kavin Gaur">
-    </div>
+  <div class="image-frame">
+    <img src="your-image.jpeg" alt="Kavin Gaur">
+  </div>
+</div>
 
     <!-- TEXT -->
     <div class="founder-text">
