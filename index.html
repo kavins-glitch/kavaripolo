@@ -237,13 +237,103 @@
     }
 
 
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }  
+
+    .insta-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .insta-grid img:hover {
+      transform: scale(1.05);
+    }
+
     .cta-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 25px;
       border: 1px solid #C8A96A;
       padding: 10px 20px;
       text-decoration: none;
       color: white;
+    }
+
+    /* CAROUSEL */
+    .insta-carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      margin-top: 30px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+/* ITEM */
+    .insta-item {
+      min-width: 300px;
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      scroll-snap-align: start;
+      backdrop-filter: blur(10px);
+    }
+
+/* IMAGE + VIDEO */
+    .insta-item img,
+    .insta-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+  
+/* CINEMATIC OVERLAY */
+    .insta-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.7));
+      opacity: 0;
+      transition: 0.5s;
+      z-index: 1;
+    }
+
+/* TEXT */
+    .overlay {
+      position: absolute;
+      bottom: 25px;
+      left: 20px;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 0.4s;
+      z-index: 2;
+    }
+
+/* HOVER = CINEMATIC EFFECT */
+    .insta-item:hover img,
+    .insta-item:hover video {
+      transform: scale(1.12);
+      filter: blur(2px) brightness(0.7);
+    }
+
+    .insta-item:hover::before {
+      opacity: 1;
+    }
+
+    .insta-item:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .contact-container {
@@ -611,10 +701,40 @@
   <h2 class="section-title">Instagram</h2>
 
   <p class="text">
-    Follow the journey, behind the scenes, and upcoming drops.
+    A visual narrative of the Kavari Polo lifestyle — movement, discipline, and identity.
   </p>
 
-  <a href="https://instagram.com/kavaripolo" target="_blank" class="cta-btn">@kavaripolo</a>
+  <div class="insta-carousel">
+
+    <!-- IMAGE 1 -->
+    <div class="insta-item">
+      <a href="https://instagram.com/kavaripolo" target="_blank">
+        <img src="insta1.jpg">
+        <div class="overlay">On Field Precision</div>
+      </a>
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="insta-item">
+      <a href="https://instagram.com/kavaripolo" target="_blank">
+        <img src="insta2.jpg">
+        <div class="overlay">Equestrian Lifestyle</div>
+      </a>
+    </div>
+
+    <!-- VIDEO REEL -->
+    <div class="insta-item">
+      <a href="https://instagram.com/kavaripolo" target="_blank">
+        <video src="reel.mp4" muted autoplay loop></video>
+        <div class="overlay">Motion & Control</div>
+      </a>
+    </div>
+
+  </div>
+
+  <a href="https://instagram.com/kavaripolo" target="_blank" class="cta-btn">
+    View Full Profile
+  </a>
 </section>
 
   <!-- CONTACT -->
