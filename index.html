@@ -20,6 +20,8 @@
       background: #000;
       color: #fff;
       font-family: 'Inter', sans-serif;
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
 
     h1, h2 {
@@ -27,9 +29,11 @@
     }
 
     section {
+      scroll-margin-top: 80px;
       padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
     /* NAVBAR */
@@ -46,14 +50,30 @@
     }
 
     nav a {
+      position: relative;
       color: #ccc;
       text-decoration: none;
       margin-left: 20px;
       font-size: 14px;
     }
 
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1px;
+      background: #C8A96A;
+      transition: 0.3s;
+    }
+
     nav a:hover {
       color: #fff;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
@@ -69,9 +89,16 @@
     }
 
     .hero h1 {
-      font-size: 60px;
-      letter-spacing: 3px;
+      font-size: 64px;
+      letter-spacing: 4px;
+      font-weight: 700;
     }
+
+    .hero p:first-of-type {
+      font-style: italic;
+      color: #C8A96A;
+    }
+
 
     .hero p {
       margin-top: 20px;
@@ -248,6 +275,7 @@
 
     .contact-form button {
       background: #C8A96A;
+      letter-spacing: 1px;
       color: #000;
       border: none;
       padding: 12px;
@@ -259,6 +287,7 @@
 
     .contact-form button:hover {
       background: #e0c07a;
+      transform: translateY(-2px);
     }
 
     .footer {
@@ -684,6 +713,12 @@
     } else {
       status.innerHTML = "Something went wrong. Try again.";
     }
+  });
+</script>
+
+  <script>
+  window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
   });
 </script>
 
