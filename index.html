@@ -17,12 +17,51 @@
       scroll-behavior: smooth;
     }
 
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #C8A96A, #e6c98f);
+      box-shadow: 0 0 10px rgba(200,169,106,0.7),
+                  0 0 20px rgba(200,169,106,0.4);
+      z-index: 9999;
+      transition: width 0.2s ease-out;
+    }
+
+    html {
+      scroll-snap-type: y proximity;
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #C8A96A;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, background 0.3s;
+      z-index: 9999;
+    }
+
+/* HOVER EFFECT */
+    .cursor.hover {
+      transform: translate(-50%, -50%) scale(1.8);
+      background: rgba(200,169,106,0.2);
+    }
+
     body {
       background: #000;
       color: #fff;
       font-family: 'Inter', sans-serif;
       opacity: 0;
       transition: opacity 0.8s ease;
+      cursor: none;
     }
 
     h1, h2 {
@@ -35,6 +74,8 @@
       max-width: 1100px;
       margin: auto;
       border-top: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.6s ease;
+      scroll-snap-align: start;
     }
 
     /* NAVBAR */
@@ -146,18 +187,19 @@
       text-align: center;
     }
 
-    /* ANIMATION */
+    /* BASE STATE */
     .fade {
       opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
+      transform: translateY(60px) scale(0.98);
+      transition: opacity 1.2s ease, transform 1.2s ease;
     }
 
+    /* VISIBLE STATE */
     .fade.show {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
-
+    
     .founder-image img {
       width: 240px;              /* smaller size */
       height: 300px;
@@ -450,7 +492,8 @@
 </head>
 
 <body>
-
+<div id="progress-bar"></div>
+<div class="cursor"></div>
   <!-- NAVBAR -->
   <nav>
     <h3>KAVARI POLO</h3>
@@ -818,20 +861,31 @@
   </div>
 
 </footer>
-
+<script>
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    let offset = window.scrollY;
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+  }
+});
+</script>
   <!-- JS -->
   <script>
-    const fades = document.querySelectorAll('.fade');
+const fades = document.querySelectorAll('.fade');
 
-    window.addEventListener('scroll', () => {
-      fades.forEach(fade => {
-        const top = fade.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          fade.classList.add('show');
-        }
-      });
-    });
-  </script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+fades.forEach(fade => observer.observe(fade));
+</script>
 
   <!-- your existing JS (fade animation etc.) -->
 
@@ -858,6 +912,36 @@
     } else {
       status.innerHTML = "Something went wrong. Try again.";
     }
+  });
+</script>
+
+  <script>
+window.addEventListener("scroll", () => {
+  const scroll = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  const progress = (scroll / height) * 100;
+
+  document.getElementById("progress-bar").style.width = progress + "%";
+});
+</script>
+
+  <script>
+  const cursor = document.querySelector(".cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+  });
+
+  const hoverElements = document.querySelectorAll("a, button");
+
+  hoverElements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      cursor.classList.add("hover");
+    });
+    el.addEventListener("mouseleave", () => {
+      cursor.classList.remove("hover");
+    });
   });
 </script>
 
