@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — Kavari Polo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#C9A96E;
+  --ink:#080705;
+  --off:#F2EDE4;
+  --dim:#7A7265;
+  --border:rgba(201,169,110,0.15);
+}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--off);
+  font-family:'Jost',sans-serif;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:28px 60px;
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  letter-spacing:.2em;
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  padding:120px 60px 60px;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;
+  font-weight:300;
+}
+.hero p{
+  color:var(--dim);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+/* GRID */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+.card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  filter:brightness(.75);
+  transition:.6s;
+}
+.card:hover img{
+  transform:scale(1.05);
+  filter:brightness(.5);
+}
+.info{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+}
+.name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+}
+.price{
+  color:var(--gold);
+  letter-spacing:.2em;
+  font-size:12px;
+}
+
+/* BUTTON */
+.buy{
+  margin-top:10px;
+  display:inline-block;
+  padding:10px 20px;
+  border:1px solid var(--gold);
+  font-size:10px;
+  letter-spacing:.3em;
+}
+.buy:hover{
+  background:var(--gold);
+  color:var(--ink);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .products{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  nav{padding:20px}
+  .hero{padding:80px 20px}
+  .products{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Kavari Polo</div>
+  <a href="index.html" style="color:var(--dim)">Back</a>
+</nav>
+
+<section class="hero">
+  <h1>Shop</h1>
+  <p>Precision. Elegance. Performance.</p>
+</section>
+
+<section class="products">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?w=800">
+    <div class="info">
+      <div class="name">Heritage Polo Shirt</div>
+      <div class="price">₹3,500</div>
+      <div class="buy">Buy Now</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800">
+    <div class="info">
+      <div class="name">Field Boots</div>
+      <div class="price">₹12,000</div>
+      <div class="buy">Buy Now</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1603297631955-bc1a9c9b7f52?w=800">
+    <div class="info">
+      <div class="name">Riding Helmet</div>
+      <div class="price">₹6,500</div>
+      <div class="buy">Buy Now</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800">
+    <div class="info">
+      <div class="name">Leather Belt</div>
+      <div class="price">₹2,000</div>
+      <div class="buy">Buy Now</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1601758260892-a3d86f6e4fbe?w=800">
+    <div class="info">
+      <div class="name">Lifestyle Jacket</div>
+      <div class="price">₹8,500</div>
+      <div class="buy">Buy Now</div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
