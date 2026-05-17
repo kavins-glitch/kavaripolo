@@ -1,0 +1,131 @@
+/* Vision page specific styles */
+
+.vision-section {
+  padding-top: 60px;
+}
+
+.vision-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px,5vw,60px);
+  color: var(--off-white);
+  margin-bottom: 40px;
+}
+
+.vision-timeline {
+  margin-top: 72px;
+  position: relative;
+}
+
+.vision-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 48px 0;
+  position: relative;
+}
+
+/* Alternate left/right alignment */
+.timeline-item:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.timeline-item:nth-child(even) .phase,
+.timeline-item:nth-child(even) h3 {
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) p {
+  text-align: right;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 56px;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+.timeline-item:hover::before {
+  background: var(--gold);
+}
+
+.phase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 24px;
+  gap: 4px;
+}
+
+.phase-number {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.phase h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--off-white);
+}
+
+.vision-timeline p {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--dim);
+  line-height: 1.85;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-timeline::before {
+    left: 24px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-left: 48px;
+  }
+
+  .timeline-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    text-align: left;
+  }
+
+  .timeline-item::before {
+    left: 24px;
+    top: 56px;
+  }
+
+  .phase {
+    padding-left: 0;
+  }
+
+  .vision-timeline p {
+    text-align: left;
+  }
+}
