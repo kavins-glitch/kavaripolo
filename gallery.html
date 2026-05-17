@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavari Polo Gallery | Visual Story</title>
+  <meta name="description" content="Explore the visual narrative of Kavari Polo – from the polo field to the designs that shape our collections." />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Tenor+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+  <div id="progress"></div>
+
+  <!-- Navigation (same as other pages) -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><a href="index.html" aria-label="Kavari Polo Home">Kavari Polo</a></div>
+      <ul class="nav-links" role="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Gallery</p>
+        <h1>Visual Storytelling</h1>
+        <p class="hero-sub">A curated collection of moments that define the Kavari Polo ethos</p>
+        <a href="gallery.html" class="btn primary" style="background: none; color: var(--gold); border: 1px solid var(--gold); padding: 0.8rem 1.5rem;">Explore Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p class="section-label">Our Visual Journey</p>
+        <h2 class="section-title">Precision meets<br><em>nature.</em></h2>
+        <p class="body-text">From early mornings at the stables to the intensity of the field – a glimpse into the world that shapes every decision we make</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Row 1 -->
+        <figure class="gallery-item" style="grid-column: 1; grid-row: span 1;">
+          <img src="https://images.unsplash.com/photo-1541293571669-b80f5c7e6f1f?auto=format&fit=crop&w=600&h=800&q=80" alt="Equestrian discipline" loading="lazy">
+          <figcaption>Discipline in Motion</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 2; grid-row: 1;">
+          <img src="https://images.unsplash.com/photo-1542759345-907926e060d6?auto=format&fit=crop&w=600&h=800&q=80" alt="Equestrian partnership" loading="lazy">
+          <figcaption>The Silent Language</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 1; grid-row: span 2;">
+          <img src="https://images.unsplash.com/photo-1526400054885-436041fe0b7d?auto=format&fit=crop&w=600&h=800&q=80" alt="Stable life" loading="lazy">
+          <figcaption>Stable &amp; Strategy</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 3; grid-row: 2;">
+          <img src="https://images.unsplash.com/photo-1506973049696-f29fcf1e69b6?auto=format&fit=crop&w=600&h=800&q=80" alt="Field intensity" loading="lazy">
+          <figcaption>Focus &amp; Flow</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Row 2 -->
+        <figure class="gallery-item" style="grid-column: 1; grid-row: 3;">
+          <img src="https://images.unsplash.com/photo-1541293571669-b80f5c7e6f1f?auto=format&fit=crop&w=600&h=800&q=80" alt="Craftsmanship" loading="lazy">
+          <figcaption>Artisan Precision</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 2; grid-row: 3;">
+          <img src="https://images.unsplash.com/photo-1526400054885-436041fe0b7d?auto=format&fit=crop&w=600&h=800&q=80" alt="Design inspiration" loading="lazy">
+          <figcaption>Design Inspiration</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 3; grid-row: span 2;">
+          <img src="https://images.unsplash.com/photo-1589308078048-031632927204?auto=format&fit=crop&w=600&h=800&q=80" alt="Future vision" loading="lazy">
+          <figcaption>Future Vision</figcaption>
+        </figure>
+        <figure class="gallery-item" style="grid-column: 1; grid-row: 4;">
+          <img src="https://images.unsplash.com/photo-1542759345-907926e060d6?auto=format&fit=crop&w=600&h=800&q=80" alt="Heritage" loading="lazy">
+          <figcaption>Heritage in Motion</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" style="background: rgba(184,150,90,0.05);">
+    <div class="container">
+      <div class="cta-content text-center">
+        <h2>Ready to Elevate Your Style?</h2>
+        <a href="shop.html" class="btn button-gradient">Shop Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand"><h3>Kavari Polo</h3><p>Style that rides beyond the game.</p></div>
+        <div class="footer-links"><h4>Navigation</h4><ul><li><a href="about.html">About</a></li><li><a href="vision.html">Vision</a></li></ul></div>
+        <div class="footer-contact"><h4>Contact</h4><p>Jaipur, Rajasthan</p><p>kavaripolo@gmail.com</p><p>@kavaripolo</p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Kavari Polo. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

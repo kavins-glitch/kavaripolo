@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavari Polo Shop | Premium Equestrian Apparel</title>
+  <meta name="description" content="Shop the Kavari Polo collection - premium polo apparel for the equestrian elite." />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Tenor+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body>
+  <div id="progress"></div>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><a href="index.html" aria-label="Kavari Polo Home">Kavari Polo</a></div>
+      <ul class="nav-links" role="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" aria-current="page">Shop</a></li>
+      </ul>
+      <button class="mobile-menu-btn"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Shop Collection</p>
+        <h1>Premium Equestrian Apparel</h1>
+        <p class="hero-sub">Shop our latest collection of polo-inspired clothing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Header -->
+  <section class="shop-header">
+    <div class="container">
+      <div class="shop-header-content">
+        <h2>Kavari Polo Collection</h2>
+        <p>Discover premium polo apparel that blends tradition with modern style</p>
+        <div class="shop-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="tops">Tops</button>
+          <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+          <button class="filter-btn" data-filter="accessories">Accessories</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="products-section">
+    <div class="container">
+      <div class="products-grid" id="products-grid">
+        <!-- Products will be injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart -->
+  <section class="cart-section">
+    <div class="container">
+      <div class="cart-container">
+        <div class="cart-summary">
+          <h2>Your Cart</h2>
+          <div class="cart-items" id="cart-items">
+            <!-- Cart items will be injected via JavaScript -->
+          </div>
+          <div class="cart-total">
+            <div class="cart-total-row">
+              <span>Subtotal</span>
+              <span class="cart-subtotal">$0.00</span>
+            </div>
+            <div class="cart-total-row">
+              <span>Shipping</span>
+              <span class="cart-shipping">Free</span>
+            </div>
+            <div class="cart-total-row total">
+              <span>Total</span>
+              <span class="cart-total">$0.00</span>
+            </div>
+          </div>
+          <div class="cart-actions">
+            <button class="btn secondary" id="clear-cart">Clear Cart</button>
+            <button class="btn primary" id="checkout-btn">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand"><h3>Kavari Polo</h3><p>Style that rides beyond the game.</p></div>
+        <div class="footer-links"><h4>Navigation</h4><ul><li><a href="about.html">About</a></li><li><a href="vision.html">Vision</a></li></ul></div>
+        <div class="footer-contact"><h4>Contact</h4><p>Jaipur, Rajasthan</p><p>kavaripolo@gmail.com</p><p>@kavaripolo</p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Kavari Polo. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
