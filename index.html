@@ -868,6 +868,80 @@ input,textarea{font-family:inherit;}
 .ft-bot{border-top:1px solid var(--bs);padding-top:clamp(18px,3vw,32px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
 .ft-cp,.ft-bi{font-family:var(--fu);font-size:10px;letter-spacing:.18em;color:var(--ghost);}
 .ft-bi{font-family:var(--fb);font-style:italic;}
+
+/* ═══════════════════════════════════════════
+   SOCIAL ROW (Founder sections)
+═══════════════════════════════════════════ */
+.f-social{display:flex;gap:clamp(20px,3vw,32px);margin-top:clamp(24px,3.5vw,36px);}
+.f-social a{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--fu);font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--dim);cursor:pointer;transition:color .2s;
+  border-bottom:1px solid var(--b);padding-bottom:4px;
+}
+.f-social a:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ═══════════════════════════════════════════
+   LIGHT (IVORY) SECTION VARIANT — for editorial breaks
+═══════════════════════════════════════════ */
+.sec-lt{background:var(--off);}
+.sec-lt .ey{color:#9A7438;}
+.sec-lt .ey::after{background:#9A7438;opacity:.5;}
+.sec-lt .h2{color:var(--ink);}
+.sec-lt .h2 em{color:#9A7438;font-style:italic;}
+.sec-lt .body{color:#6B6052;}
+.sec-lt .btn-t{color:#9A7438;}
+.sec-lt .btn-t::after{background:#9A7438;}
+
+/* ═══════════════════════════════════════════
+   HERITAGE — EDITORIAL SPLIT
+═══════════════════════════════════════════ */
+.her-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(40px,6vw,96px);align-items:center;
+}
+@media(max-width:860px){.her-grid{grid-template-columns:1fr;}}
+.her-img{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--char);}
+.her-img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) contrast(1.02);transition:transform 1s var(--ease);}
+.her-img:hover img{transform:scale(1.045);}
+.her-img::before,.her-img::after{
+  content:'';position:absolute;z-index:2;width:20px;height:20px;
+  border-color:#9A7438;border-style:solid;opacity:.55;
+}
+.her-img::before{top:14px;left:14px;border-width:1px 0 0 1px;}
+.her-img::after{bottom:14px;right:14px;border-width:0 1px 1px 0;}
+.her-cap{
+  margin-top:16px;font-family:var(--fu);font-size:10px;letter-spacing:.34em;
+  text-transform:uppercase;color:#9A7438;
+}
+.her-list{margin-top:clamp(32px,4.5vw,48px);display:flex;flex-direction:column;gap:clamp(20px,3vw,28px);}
+.her-it{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;}
+.her-it-n{font-family:var(--fd);font-size:clamp(28px,3vw,36px);font-weight:300;color:#9A7438;line-height:1;}
+.her-it-t{font-family:var(--fu);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;}
+.her-it-x{font-family:var(--fb);font-size:clamp(14px,1.4vw,16px);color:#6B6052;line-height:1.82;}
+
+/* ═══════════════════════════════════════════
+   CRAFTSMANSHIP GRID
+═══════════════════════════════════════════ */
+.craft-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  margin-top:clamp(40px,6vw,64px);
+}
+@media(max-width:860px){.craft-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.craft-grid{grid-template-columns:1fr;}}
+.craft-c{position:relative;overflow:hidden;aspect-ratio:3/4;}
+.craft-c img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:brightness(.74) saturate(.85) sepia(.08);
+  transition:transform .9s var(--ease),filter .9s var(--ease);
+}
+.craft-c:hover img{transform:scale(1.05);filter:brightness(.56) saturate(.75) sepia(.08);}
+.craft-c::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.82),transparent 58%);}
+.craft-tx{position:absolute;bottom:18px;left:18px;right:18px;z-index:2;}
+.craft-tx .ct-n{font-family:var(--fd);font-style:italic;font-size:clamp(18px,2vw,23px);color:var(--off);margin-bottom:4px;}
+.craft-tx .ct-l{font-family:var(--fu);font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);}
+.craft-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px);align-items:start;}
+@media(max-width:768px){.craft-intro{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -938,11 +1012,12 @@ input,textarea{font-family:inherit;}
   <div class="hero-ov"></div>
   <div class="hero-vig"></div>
   <div class="hero-ct">
-    <p class="hero-ey">Jaipur, Rajasthan &nbsp;·&nbsp; Est. 2024</p>
+    <p class="hero-ey">Jaipur &nbsp;·&nbsp; India &nbsp;·&nbsp; Est. 2024</p>
     <h1>Kavari<br><em>Polo</em></h1>
-    <p class="hero-sub">Style that rides beyond the game.</p>
-    <div class="hero-cta-wrap">
-      <button class="btn btn-o" onclick="go('about')">Explore the Brand</button>
+    <p class="hero-sub">Where equestrian heritage meets modern luxury.</p>
+    <div class="hero-cta-wrap" style="display:flex;gap:16px;flex-wrap:wrap;">
+      <button class="btn btn-g" onclick="go('shop')">Discover Collection</button>
+      <button class="btn btn-o" onclick="go('about')">Our Story</button>
     </div>
   </div>
   <div class="hero-badge" aria-hidden="true">
@@ -1048,6 +1123,16 @@ input,textarea{font-family:inherit;}
           <div class="f-stat"><div class="f-stat-n">2024</div><div class="f-stat-l">Established</div></div>
           <div class="f-stat"><div class="f-stat-n">JPN</div><div class="f-stat-l">Jaipur Origin</div></div>
           <div class="f-stat"><div class="f-stat-n">∞</div><div class="f-stat-l">Standard</div></div>
+        </div>
+        <div class="f-social">
+          <a onclick="window.open('https://instagram.com/kavaripolo','_blank')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
         </div>
         <div style="margin-top:clamp(24px,4vw,40px);"><button class="btn-t" onclick="go('about')">Full Story →</button></div>
       </div>
@@ -1190,7 +1275,7 @@ input,textarea{font-family:inherit;}
         <p class="ft-nl">Connect</p>
         <a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a>
         <a onclick="window.open('https://instagram.com/kavaripolo','_blank')">Instagram</a>
-        <a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a>
+        <a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a><a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="ft-nc">
         <p class="ft-nl">Location</p>
@@ -1299,6 +1384,16 @@ input,textarea{font-family:inherit;}
           <div class="f-stat"><div class="f-stat-n">JPN</div><div class="f-stat-l">Jaipur Origin</div></div>
           <div class="f-stat"><div class="f-stat-n">∞</div><div class="f-stat-l">Standard</div></div>
         </div>
+        <div class="f-social">
+          <a onclick="window.open('https://instagram.com/kavaripolo','_blank')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1336,14 +1431,82 @@ input,textarea{font-family:inherit;}
   </div>
 </section>
 
+<!-- ═════ THE HERITAGE ═════ -->
+<section class="sec sec-lt">
+  <div class="wrap">
+    <div class="her-grid">
+      <div class="rv-l">
+        <div class="her-img">
+          <img src="https://images.unsplash.com/photo-1525785967371-87ba44b3e6cf?w=1100&q=80" alt="The horse-rider bond" loading="lazy">
+        </div>
+        <p class="her-cap">Jaipur, Rajasthan &nbsp;·&nbsp; The Origin</p>
+      </div>
+      <div class="rv-r d2">
+        <p class="ey">The Heritage</p>
+        <h2 class="h2">A lineage written<br>in <em>dust and gold.</em></h2>
+        <div class="body">
+          <p>Polo has been played on the soil of Rajasthan for generations — a sport of kings, carried forward by those who understood that mastery is inherited through practice, not proclamation. Jaipur sits at the heart of this lineage, where palaces once opened their grounds to the game and the bond between horse and rider became a measure of character.</p>
+          <p>Kavari Polo carries this inheritance forward — not as costume, but as conduct. Every reference to heritage in our work is drawn from a living tradition, reinterpreted for a generation that rides toward the future while remaining tethered to where it began.</p>
+        </div>
+        <div class="her-list">
+          <div class="her-it">
+            <div class="her-it-n">I</div>
+            <div><div class="her-it-t">Indian Polo Culture</div><p class="her-it-x">A sport of discipline and ceremony, long woven into the identity of Rajasthan's royal grounds and modern clubs alike.</p></div>
+          </div>
+          <div class="her-it">
+            <div class="her-it-n">II</div>
+            <div><div class="her-it-t">The Horse-Rider Bond</div><p class="her-it-x">Trust built in silence — a relationship that defines posture, patience, and the quiet confidence Kavari Polo is built upon.</p></div>
+          </div>
+          <div class="her-it">
+            <div class="her-it-n">III</div>
+            <div><div class="her-it-t">Tradition Toward Tomorrow</div><p class="her-it-x">Heritage is not preserved behind glass. It is worn, ridden, and carried into a modern, global equestrian future.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ CRAFTED WITH INTENTION ═════ -->
+<section class="sec sec-dk">
+  <div class="wrap">
+    <div class="craft-intro">
+      <div class="rv">
+        <p class="ey">Craftsmanship</p>
+        <h2 class="h2">Crafted with<br><em>intention.</em></h2>
+      </div>
+      <div class="rv d2" style="display:flex;align-items:center;">
+        <div class="body">
+          <p>Every piece begins with material — leather selected for character, hardware finished to hold its weight, stitching set to outlast the season it was made for. Nothing is added for decoration alone; every detail serves the rider, the garment, and the standard it must meet.</p>
+          <p>This is the discipline of construction: a process closer to saddlery than fast fashion, where intention is visible in the seam, the edge, and the finish.</p>
+        </div>
+      </div>
+    </div>
+    <div class="craft-grid rv d1">
+      <div class="craft-c">
+        <img src="https://images.squarespace-cdn.com/content/v1/630641fc9bb5216417ef8f30/9f75964f-e58c-4071-8cd3-f075ee6de713/Nashville-Photographer-250615049368020002.jpg" alt="Leather and saddle craft" loading="lazy">
+        <div class="craft-tx"><div class="ct-n">The Leather</div><div class="ct-l">Selected for Character</div></div>
+      </div>
+      <div class="craft-c">
+        <img src="https://media.istockphoto.com/id/177000853/photo/horses-on-the-farm.jpg?s=612x612&w=0&k=20&c=ypbIjJNQCu02sgwt6HJ_aKd111V1UiULsG6KOVgqvZg=" alt="Stitching and construction detail" loading="lazy">
+        <div class="craft-tx"><div class="ct-n">The Stitch</div><div class="ct-l">Built to Endure</div></div>
+      </div>
+      <div class="craft-c">
+        <img src="https://cdn.pixabay.com/photo/2020/11/05/20/16/horses-5716127_1280.jpg" alt="Hardware and finishing detail" loading="lazy">
+        <div class="craft-tx"><div class="ct-n">The Hardware</div><div class="ct-l">Finished by Hand</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
 <footer class="ft"><div class="wrap">
   <div class="ft-top">
     <div><p class="ft-logo">Kavari Polo</p><p class="ft-tag">Style that rides beyond the game.</p></div>
     <div class="ft-nav">
       <div class="ft-nc"><p class="ft-nl">Navigate</p><a onclick="go('home')">Home</a><a onclick="go('about')">About</a><a onclick="go('vision')">Vision</a><a onclick="go('gallery')">Gallery</a></div>
-      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a></div>
-      <div class="ft-nc"><p class="ft-nl">Location</p><span class="ft-ni">Jaipur, Rajasthan</span><span class="ft-ni">India</span><span class="ft-ni" style="margin-top:10px;">Est. 2024</span></div>
+      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a><a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </div>
   <div class="ft-bot"><p class="ft-cp">© 2026 Kavari Polo. All rights reserved.</p><p class="ft-bi">Built with intent.</p></div>
@@ -1423,7 +1586,7 @@ input,textarea{font-family:inherit;}
     <div><p class="ft-logo">Kavari Polo</p><p class="ft-tag">Style that rides beyond the game.</p></div>
     <div class="ft-nav">
       <div class="ft-nc"><p class="ft-nl">Navigate</p><a onclick="go('home')">Home</a><a onclick="go('about')">About</a><a onclick="go('vision')">Vision</a><a onclick="go('gallery')">Gallery</a></div>
-      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a></div>
+      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a><a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </div>
   <div class="ft-bot"><p class="ft-cp">© 2026 Kavari Polo. All rights reserved.</p><p class="ft-bi">Built with intent.</p></div>
@@ -1492,7 +1655,7 @@ input,textarea{font-family:inherit;}
     <div><p class="ft-logo">Kavari Polo</p><p class="ft-tag">Style that rides beyond the game.</p></div>
     <div class="ft-nav">
       <div class="ft-nc"><p class="ft-nl">Navigate</p><a onclick="go('home')">Home</a><a onclick="go('about')">About</a><a onclick="go('vision')">Vision</a><a onclick="go('gallery')">Gallery</a></div>
-      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a></div>
+      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a><a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </div>
   <div class="ft-bot"><p class="ft-cp">© 2026 Kavari Polo. All rights reserved.</p><p class="ft-bi">Built with intent.</p></div>
@@ -1553,7 +1716,7 @@ input,textarea{font-family:inherit;}
     <div><p class="ft-logo">Kavari Polo</p><p class="ft-tag">Style that rides beyond the game.</p></div>
     <div class="ft-nav">
       <div class="ft-nc"><p class="ft-nl">Navigate</p><a onclick="go('home')">Home</a><a onclick="go('about')">About</a><a onclick="go('vision')">Vision</a><a onclick="go('gallery')">Gallery</a></div>
-      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a></div>
+      <div class="ft-nc"><p class="ft-nl">Connect</p><a onclick="go('contact')">Contact</a><a onclick="go('shop')">Shop</a><a onclick="window.open('mailto:kavaripolo@gmail.com')">Email</a><a onclick="window.open('https://www.linkedin.com/in/kavingaur','_blank')" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
   </div>
   <div class="ft-bot"><p class="ft-cp">© 2026 Kavari Polo. All rights reserved.</p><p class="ft-bi">Built with intent.</p></div>
